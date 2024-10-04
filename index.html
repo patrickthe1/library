@@ -7,24 +7,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>BOOKS</h1>
+     <div class="item-one">
+      <h1 style="text-decoration: underline;">Books</h1>
+     </div>
+    <div class="container item-two">
         <div class="cards"></div>
+        <button id="showModal" class="new-book-btn" >NEW BOOK</button>
     </div>
-    <dialog id="bookDialogue">
-        <form>
+    <dialog id="bookDialogue" class="dialog">
+        <form class="dialog-form">
             <label for="title">Enter Book title:</label>
-            <input type="text" id="title">
+            <input type="text" id="title" required>
             <label for="author">Author:</label>
-            <input type="text" id="author">
+            <input type="text" id="author" required>
             <label for="pages">Pages:</label>
-            <input type="number">
-            <button value="cancel" formmethod="dialogue">Cancel</button>
-            <button id="confirm">Confirm</button>
+            <input type="number" id="pages" required min="1">
+            <label for="isRead">Have you read it?</label>
+            <select id="isRead" required>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+            <div class="form-buttons">
+              <button  value="cancel" formmethod="dialog" class="cancel-btn">Cancel</button>
+              <button id="confirm" value="default">Confirm</button>
+            </div>
         </form>
     </dialog>
 
-    <button id="showModal">NEW BOOK</button>
+    
 
     <script src="library.js"></script>
 

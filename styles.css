@@ -1,68 +1,174 @@
-/* Basic Reset */  
-* {  
-    margin: 0;  
-    padding: 0;  
-    box-sizing: border-box;  
-} 
 
 @font-face {
     font-family: "Roboto";
     src: url(../ADMIN-DASHBOARD/Roboto/Roboto-Black.ttf);
 }
 
-body {  
-    font-family: "Rooboto";  
-    line-height: 1.6;
-    height: 100vh;  
-}  
-
-.container{
-    position: absolute;
-    left: 250px;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    gap: 4px;
-    width: 800px;
-    height: 300px;
-    border: 2px solid black;
-    align-items: start;
-}
-
-h1{
-    text-align: center;
-    width: 100%;
-}
-
-.cards{
-    display: flex;
-    gap: 4px;
-    align-items: start;
-}
-
-div .book{
-    background-color: rgb(222, 179, 126);
-    border: 1px solid black;
-    font-size: 2rem;
-    text-align: center;
+@font-face {
+    font-family: "Roboto bold";
+    src: url(../ADMIN-DASHBOARD/Roboto/Roboto-Bold.ttf);
     
 }
+body,html {  
+    margin: 0;  
+    padding: 0; 
+    height: 100%;
+    font-family: "Rooboto";  
+    line-height: 1.6;
+    box-sizing: border-box;  
+} 
 
-#displayBook{
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    background-color: #f0f0f0;
+}
+
+.container{
+    padding: 20px;
+    text-align: center;
+}
+.item-one{
+    flex-grow: 1;
+}
+
+.item-two{
+    flex-grow: 20;
+}
+
+.new-book-btn {
+    padding: 10px 20px;
+}
+
+
+#showModal{
     border: none;
-    background-color: rgb(222, 179, 126);
+    margin-top: 0.5rem;
+    background-color: rgb(54, 156, 199);
+    font-family: "Roboto bold";
     font-size: 1.2rem;
-    width: 8rem;
-    height: 3.8rem;
     margin: auto;
     cursor: pointer;
-    position: absolute;
-    top: 450px;
-    left: 600px;
     border-radius: 0.8rem;
 }
 
+
+
+.dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 400px;
+    width: 90%;
+    background-color: #fff;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show Dialog with Animation */
+dialog[open] {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Form Layout */
+.dialog-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.dialog-form input, 
+.dialog-form select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 8px 16px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-buttons button[type="button"] {
+    background-color: #ccc;
+    color: #333;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.form-buttons button:hover {
+    opacity: 0.9;
+}
+
+/* Transition for Opening and Closing Dialog */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.8); }
+}
+
+/* Book Cards Styling */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90%;
+    width: 90%;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
 
 
  
