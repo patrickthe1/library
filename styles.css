@@ -1,0 +1,71 @@
+/* Basic Reset */  
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+} 
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../ADMIN-DASHBOARD/Roboto/Roboto-Black.ttf);
+}
+
+body {  
+    font-family: "Rooboto";  
+    line-height: 1.6;
+    height: 100vh;  
+}  
+
+.container{
+    position: absolute;
+    left: 250px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 4px;
+    width: 800px;
+    height: 300px;
+    border: 2px solid black;
+    align-items: start;
+}
+
+h1{
+    text-align: center;
+    width: 100%;
+}
+
+.cards{
+    display: flex;
+    gap: 4px;
+    align-items: start;
+}
+
+div .book{
+    background-color: rgb(222, 179, 126);
+    border: 1px solid black;
+    font-size: 2rem;
+    text-align: center;
+    
+}
+
+#displayBook{
+    border: none;
+    background-color: rgb(222, 179, 126);
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 3.8rem;
+    margin: auto;
+    cursor: pointer;
+    position: absolute;
+    top: 450px;
+    left: 600px;
+    border-radius: 0.8rem;
+}
+
+
+
+ 
+
+
+
