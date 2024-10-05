@@ -15,8 +15,12 @@ function Book(title, author, pages, isRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.isRead = isRead;
+    this.isRead = isRead || false;
 }
+
+Book.prototype.toggleReadStatus = function() {
+    this.isRead = !this.isRead;
+};
 
 cancel.addEventListener("click", (e) =>{
     e.preventDefault();
@@ -56,7 +60,6 @@ confirmBtn.addEventListener("click", (e) => {
 
 
 
-
 function addBookToDOM(book) {
     const card = document.createElement('div');
     card.classList.add('card');
@@ -70,13 +73,23 @@ function addBookToDOM(book) {
     const pagesElem = document.createElement('p');
     pagesElem.textContent = `Pages: ${book.pages}`;
     
-    const isReadElem = document.createElement('p');
-    isReadElem.textContent = `Read: ${book.isRead === 'true' ? 'Yes' : 'No'}`;
+    const toggleButton = document.createElement('button');
+    toggleButton.textContent = book.isRead ? 'Read' : 'Not Read';
+    toggleButton.style.backgroundColor = book.isRead ? 'green' : 'red';
+    
+    // Add event listener to toggle read status and update button text
+    toggleButton.addEventListener('click', () => {
+        book.toggleReadStatus();
+        toggleButton.textContent = book.isRead ? 'Read' : 'Not Read';  // Update button text
+        toggleButton.classList.add('toggle-btn');
+
+        toggleButton.style.backgroundColor = book.isRead ? 'green' : 'red';
+    });
     
     card.appendChild(titleElem);
     card.appendChild(authorElem);
-    card.appendChild(pagesElem);
-    card.appendChild(isReadElem);
+    card.appendChild(pagesElem);    
+    card.appendChild(toggleButton);
     
     container.appendChild(card);
 }
