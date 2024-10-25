@@ -11,16 +11,19 @@ showButton.addEventListener("click", () => {
 });
 
 // Constructor function for Book
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead || false;
+class Book{
+    constructor(title, author, pages, isRead = false) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead || false;
+    }
+    toggleReadStatus = () => {
+        this.isRead = !this.isRead;
+    };
 }
 
-Book.prototype.toggleReadStatus = function() {
-    this.isRead = !this.isRead;
-};
+
 
 cancel.addEventListener("click", (e) =>{
     e.preventDefault();
@@ -93,3 +96,5 @@ function addBookToDOM(book) {
     
     container.appendChild(card);
 }
+
+
