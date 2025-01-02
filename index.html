@@ -17,11 +17,11 @@
     <dialog id="bookDialogue" class="dialog">
         <form class="dialog-form">
             <label for="title">Enter Book title:</label>
-            <input type="text" id="title" required>
+            <input type="text" id="title" name="title" required minlength="3" maxlength="100">
             <label for="author">Author:</label>
-            <input type="text" id="author" required>
+            <input type="text" id="author" name="author" required minlength="3" maxlength="100">
             <label for="pages">Pages:</label>
-            <input type="number" id="pages" required min="1">
+            <input type="number" id="pages" name="pages" required min="1">
             <label for="isRead">Have you read it?</label>
             <select id="isRead" required>
               <option value="true">Yes</option>
@@ -31,6 +31,7 @@
               <button  value="cancel" formmethod="dialog" class="cancel-btn">Cancel</button>
               <button id="confirm" value="default">Confirm</button>
             </div>
+            <span class="error-message" id="pages-error"></span>
         </form>
     </dialog>
 

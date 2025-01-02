@@ -185,7 +185,27 @@ dialog[open] {
     opacity: 0.9;
 }
 
+
+
  
 
 
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Invalid input styling */
+input.invalid {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
+/* Valid input styling */
+input:valid {
+    border: 2px solid green;
+    background-color: #e6ffe6;
+}
 
